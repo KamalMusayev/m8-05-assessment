@@ -154,15 +154,15 @@ System behavior:
 
 ### Main Chat Interface
 
-![Main Chat Interface](assets/ml_buddy_1.png)
+![Main Chat Interface](assets/main_chat_interface.png)
 
 ### Model and Temperature Controls
 
-![Model and Temperature Controls](assets/ml_buddy_2.png)
+![Model and Temperature Controls](assets/model_and_temperature_controls.png)
 
 ### Safety / Edge Case Handling
 
-![Safety / Edge Case Handling](assets/ml_buddy_3.png)
+![Safety / Edge Case Handling](assets/safety_edge_case_handling.png)
 
 ---
 

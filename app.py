@@ -14,7 +14,7 @@ from llm_service import ChatService
 
 st.set_page_config(
     page_title="ML Study Buddy",
-    page_icon="🎓",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -26,19 +26,6 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        .title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .subtitle {
-            text-align: center;
-            opacity: 0.6;
-            margin-bottom: 1.5rem;
-        }
-
         .stChatMessage {
             border-radius: 12px;
         }
@@ -77,7 +64,6 @@ with st.sidebar:
         ["gemma3:4b", "llama3.2:3b", "qwen2.5:0.5b"],
     )
 
-    # ✅ MOVED DOWN (clear button aşağı salındı)
     st.markdown("---")
 
     if st.button("🗑️ Clear"):
@@ -98,7 +84,6 @@ if "service" not in st.session_state:
 
 service: ChatService = st.session_state.service
 
-# ✅ IMPORTANT FIX: model dəyişəndə dərhal update olunur
 service.model = model_choice
 service.temperature = temperature
 
@@ -106,11 +91,36 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # ─────────────────────────────────────────────
-# Header
+# Header (NO EMOJI)
 # ─────────────────────────────────────────────
 
-st.markdown('<div class="title">🎓 ML Study Buddy</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Your AI tutor for Machine Learning</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+    <div style="
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 0.2rem;
+    ">
+        ML Study Buddy
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div style="
+        text-align: center;
+        font-size: 1.2rem;
+        opacity: 0.7;
+        margin-bottom: 1.5rem;
+    ">
+        Your AI tutor for Machine Learning
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # ─────────────────────────────────────────────
 # Mode prompts
