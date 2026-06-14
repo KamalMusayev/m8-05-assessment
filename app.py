@@ -102,7 +102,7 @@ st.markdown(
         font-weight: 800;
         margin-bottom: 0.2rem;
     ">
-        ML Study Buddy
+        Machine Learning Study Buddy
     </div>
     """,
     unsafe_allow_html=True
